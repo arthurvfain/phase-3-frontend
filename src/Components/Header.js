@@ -8,7 +8,7 @@ function Header()
             <h1>iTravel</h1>
             <nav>
                 <Chip component={NavLink} to='/FlightBrowser' exact label="Check Out Flights"/>
-                <Chip component={NavLink} to='/TicketPurchase' exact label="Buy Tickets"/>
+                <Chip component={NavLink} to='/TicketViewer' exact label="View Tickets"/>
             </nav>
         </header>
     )

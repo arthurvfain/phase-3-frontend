@@ -1,15 +1,21 @@
 import Search from "./Search"
-import FlightCard from "./FlightCard"
+import DestinationCard from "./DestinationCard"
 import { Grid } from "@material-ui/core"
 function FlightBrowser({flights, destinations})
 {
     console.log(destinations)
-    let flightCards = destinations.map(destination=><FlightCard destination={destination}/>)
+    let destinationCards = destinations.map(destination=>
+    <Grid item xs={6} sm={3} key={destination.id}> 
+    <DestinationCard destination={destination}/> 
+    </Grid>
+    )
     return (
         <div>
             <Search/>
-
-            {flightCards}
+            <Grid container spacing={5}>
+                {destinationCards}
+            </Grid>
+            
         </div>
     )
 }
