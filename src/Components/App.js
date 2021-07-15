@@ -12,16 +12,18 @@ function App() {
   
   const [flights, setFlights] = useState([])
   const [destinations, setDestinations] = useState([])
+  const [passengers, setPassengers] = useState([])
+  const [logIn, setLogIn] = useState({})
 
   useEffect(() => {
     fetch('http://localhost:9393/flights').then(r=>r.json()).then(data=>setFlights(data))
     fetch('http://localhost:9393/destinations').then(r=>r.json()).then(data=>setDestinations(data))
-    
+    fetch('http://localhost:9393/passengers').then(r=>r.json()).then(data=>setPassengers(data))
   }, [])
 
   return (
     <div className="App">
-      <Header />
+      <Header passengers = {passengers} setLogIn = {setLogIn} />
       
       <Switch>
         <Route path='/FlightBrowser' component={()=><FlightBrowser flights = {flights} destinations = {destinations}/>}/>
