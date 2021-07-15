@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Header({passengers, setLogIn})
 {
-    let passengerList = passengers.map(passenger => <option>{passenger.name}</option>)
+    let passengerList = passengers.map(passenger => <option key={passenger.id}>{passenger.name}</option>)
 
     function loggedIn(e) {
         
@@ -16,6 +16,7 @@ function Header({passengers, setLogIn})
         <header>
             <h1>iTravel</h1>
             <select onChange={loggedIn}>
+                <option>Log In Here</option>
                 {passengerList}
             </select>
             <nav>

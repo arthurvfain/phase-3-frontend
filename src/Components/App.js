@@ -21,7 +21,7 @@ function App() {
     fetch('http://localhost:9393/passengers').then(r=>r.json()).then(data=>setPassengers(data))
   }, [])
 
-  console.log(logIn)
+  // console.log(logIn)
 
   return (
     <div className="App">

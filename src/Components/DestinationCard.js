@@ -15,7 +15,7 @@ function DestinationCard({ destination, logIn })
     const [popupRendered, setPopupRendered] = useState(true)
     
     function handleClick(e) {
-        console.log("i fired!")
+        //console.log("i fired!")
         // setClicked(clicked => !clicked)
         fetch(`http://localhost:9393/flights_to_destination/${destination.id}`)
         .then(res => res.json())
