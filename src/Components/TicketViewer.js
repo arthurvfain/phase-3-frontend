@@ -11,9 +11,11 @@ function TicketViewer({logIn})
         .then(resp => resp.json())
         .then(data => setTickets(data))
         // .then(console.log)
-    }, [tickets],[])
 
-    let ticketsList = tickets.map(ticket => <Ticket ticket={ticket} />)
+        // return(() => console.log("loaded"))
+    }, [])
+
+    let ticketsList = tickets.map(ticket => <Ticket key={ticket.id} ticket={ticket} />)
 
     return (
         <div>

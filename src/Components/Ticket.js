@@ -7,11 +7,11 @@ function Ticket ({ticket}) {
             method: 'DELETE'
         })
 
-        
+
     }
     return(
     <Card>
-        <h4>Flight To: {ticket.destination}</h4>
+        <h4>Flight To: {ticket.destination.location_name}</h4>
         <h5>Airline: {ticket.airline_name}</h5>
         <h5>Flight Number: {ticket.flight_num}</h5>
         <h6>Departing At: {ticket.departure}</h6>

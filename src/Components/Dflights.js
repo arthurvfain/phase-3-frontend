@@ -5,18 +5,20 @@ function Dflights ({flight, logIn})
     console.log(flight.id)
     console.log(logIn.id)
     function makeTicket(){
+        let ticketData = {
+            "flight_id": parseInt(flight.id,10),
+            "passenger_id": parseInt(logIn.id,10)
+        } 
+        console.log(ticketData)
         fetch('http://localhost:9393/new_ticket',{
             method: "POST",
             headers:{
                 "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: JSON.stringify({
-                "flight_id": flight.id,
-                "passenger_id": logIn.id
-            })
+            body: JSON.stringify(ticketData)
 
-        })
+        }).then(res => res.json())
 
     }
     return (
