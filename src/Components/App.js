@@ -21,13 +21,15 @@ function App() {
     fetch('http://localhost:9393/passengers').then(r=>r.json()).then(data=>setPassengers(data))
   }, [])
 
+  // console.log(logIn)
+
   return (
     <div className="App">
       <Header passengers = {passengers} setLogIn = {setLogIn} />
       
       <Switch>
-        <Route path='/FlightBrowser' component={()=><FlightBrowser flights = {flights} destinations = {destinations}/>}/>
-        <Route path='/TicketViewer' component={()=><TicketViewer/>}/>
+        <Route path='/FlightBrowser' component={()=><FlightBrowser flights = {flights} destinations = {destinations} logIn = {logIn} />}/>
+        <Route path='/TicketViewer' component={()=><TicketViewer logIn = {logIn} />}/>
         
       </Switch>
     </div>
