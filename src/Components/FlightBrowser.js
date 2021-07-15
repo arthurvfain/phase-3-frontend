@@ -3,12 +3,12 @@ import Destinations from "./Destinations"
 import DestinationCard from "./DestinationCard"
 import { Grid, Chip } from "@material-ui/core"
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-function FlightBrowser({flights, destinations})
+function FlightBrowser({flights, destinations, logIn})
 {
         
         let destinationCards = destinations.map(destination=>
         <Grid item xs={6} sm={3} key={destination.id}> 
-            <DestinationCard destination={destination}/> 
+            <DestinationCard destination={destination} logIn = {logIn}/> 
         </Grid>
     )
     // console.log(destinationCards)

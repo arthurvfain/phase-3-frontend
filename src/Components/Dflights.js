@@ -1,10 +1,22 @@
 import { Chip, Card } from '@material-ui/core'
 
-function Dflights ({flight}) 
+function Dflights ({flight, logIn}) 
 {
-    // console.log(flight)
+    console.log(flight.id)
+    console.log(logIn.id)
     function makeTicket(){
+        fetch('http://localhost:9393/new_ticket',{
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                "flight_id": flight.id,
+                "passenger_id": logIn.id
+            })
 
+        })
 
     }
     return (

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { auto, createPopper } from '@popperjs/core';
 import Dflights from './Dflights'
 
-function DestinationCard({ destination })
+function DestinationCard({ destination, logIn })
 {
     const [flights, setFlights] = useState([])
     const [flightsList, setFlightsList] = useState([])
@@ -21,7 +21,7 @@ function DestinationCard({ destination })
         .then(res => res.json())
         // .then(console.log)
         .then(data => {
-            let flightList = data.map(flight => <Dflights flight = {flight} />)
+            let flightList = data.map(flight => <Dflights flight = {flight} logIn={logIn} />)
             // console.log(flightList)
             setFlightsList(flightList)
         })
