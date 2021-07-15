@@ -6,6 +6,10 @@ function Header()
     return (
         <header>
             <h1>iTravel</h1>
+            <select>
+                <option></option>
+                <option></option>
+            </select>
             <nav>
                 <Chip component={NavLink} to='/FlightBrowser' exact label="Check Out Flights"/>
                 <Chip component={NavLink} to='/TicketViewer' exact label="View Tickets"/>

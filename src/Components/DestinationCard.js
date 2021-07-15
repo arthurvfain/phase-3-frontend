@@ -17,24 +17,36 @@ function DestinationCard({ destination })
     
     function handleClick(e) {
         console.log("i fired!")
-        setClicked(clicked=>!clicked)
+        // setClicked(clicked => !clicked)
         fetch(`http://localhost:9393/flights_to_destination/${destination.id}`)
-            .then(res => res.json())
-            .then(data => data.length > 0 ? setFlights(data) : console.log("No flights found"))
-            .then(setFlightsList(flights.map(flight=><Dflights flight={flight} />)))
+        .then(res => res.json())
+        // .then(console.log)
+        .then(data => {
+            let flightList = data.map(flight => <Dflights flight = {flight} />)
+            // console.log(flightList)
+            setFlightsList(flightList)
+        })
+        
+        // .then(data => data.length > 0 ? setFlights(data) : console.log("No flights found"))
+        // .then(console.log(flights))
+        // .then(setFlightsList(flights.map(flight => <Dflights flight = {flight} />)))
+        // .then(console.log(flightsList))
+        // .then(setClicked(true))
     }
 
     let popupJsx = (
         <Popup key={destination.id} onClose={handleClose} contentStyle={{width:auto}} trigger={<Card onClick={handleClick}><h4>{destination.location_name}</h4></Card>} position="bottom center">
                 <Card>
-                    {clicked ? {flightsList} : <Chip label="See Flights" onClick={handleClick}/>}                      
-                </Card>               
+                    {flightsList}
+                    {clicked ? "" : <Chip label="See Flights" onClick={handleClick}/>}
+                </Card>
         </Popup>
     )
     
     function handleClose(){
         setFlights([])
         setFlightsList([])
+        setClicked(false)
     }
 
 

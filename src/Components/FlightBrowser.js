@@ -11,7 +11,7 @@ function FlightBrowser({flights, destinations})
             <DestinationCard destination={destination}/> 
         </Grid>
     )
-    console.log(destinationCards)
+    // console.log(destinationCards)
     return(
         <div>
         <Search/>
