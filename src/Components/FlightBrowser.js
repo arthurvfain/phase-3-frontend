@@ -13,9 +13,9 @@ function FlightBrowser({flights, destinations, logIn})
     )
     // console.log(destinationCards)
     return(
-        <div>
-        <Search/>
-        <Grid container spacing={5}>
+        <div style={{backgroundImage: 'url(https://global-uploads.webflow.com/5ee3c9151829ab5cd0428a88/5f5d2b9a026a49f1e9ecf541_Sunset-Behind-Clouds-banner-p-1080.jpeg)', backgroundSize: '300%', backgroundAttachment: 'fixed', height: '100vh', padding: '1vh'}}>
+        {/* <Search flights = {flights} /> */}
+        <Grid container spacing={7}>
             {destinationCards}
         </Grid>
         </div>

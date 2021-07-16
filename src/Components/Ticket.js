@@ -1,13 +1,14 @@
 import { Card, Chip } from '@material-ui/core'
 
-function Ticket ({ticket, logIn}) {
+function Ticket ({ticket, logIn, handleDelete}) {
 
 
-    console.log(ticket)
-    let ticketId = ticket.tickets.find(ticket=>ticket.passenger_id === logIn.id).id
-    console.log(ticketId)
+    // console.log(ticket)
+    // console.log(ticketId)
     function handleCancel(){
         //console.log(ticket.id)
+        let ticketId = ticket.tickets.find(ticket=>ticket.passenger_id === logIn.id).id
+        handleDelete(ticket.id)
         fetch(`http://localhost:9393/delete_ticket/${ticketId}`, {
             method: 'DELETE'
         })

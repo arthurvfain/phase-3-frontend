@@ -4,6 +4,13 @@ import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom"
+import WebFont from 'webfontloader'
+
+WebFont.load({
+  google: {
+    families: ['Varela Round', 'sans-serif']
+  }
+});
 
 ReactDOM.render(
   <Router>

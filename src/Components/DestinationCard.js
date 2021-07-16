@@ -35,9 +35,9 @@ function DestinationCard({ destination, logIn })
     console.log(clicked)
     let popupJsx = (
         <Popup key={destination.id} onClose={handleClose} contentStyle={{width:auto}} trigger={<Card onClick={handleClick}><h4>{destination.location_name}</h4></Card>} position="bottom center">
-                <Card>
+                <Card variant="outlined">
                     {flightsList}
-                    {clicked ? null : <Chip label="See Flights" onClick={handleClick}/>}
+                    {clicked ? null : <Chip label="See Flights" onClick={handleClick} color="primary"/>}
                 </Card>
         </Popup>
     )
