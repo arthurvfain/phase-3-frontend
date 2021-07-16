@@ -5,18 +5,18 @@ function TicketViewer({logIn})
 {
 
     const [tickets, setTickets] = useState([])
-    console.log(logIn)
+    // console.log(logIn)
     useEffect(() => {
-        if (logIn !== {})
+        if (logIn !== "")
         {
         fetch(`http://localhost:9393/passenger_tickets/${logIn.id}`)
         .then(resp => resp.json())
-        .then(data => setTickets(data))
-        // .then(console.log)
+        // .then(data => setTickets(data))
+        .then(console.log)
         }
 
         // return(() => console.log("loaded"))
-    }, [tickets])
+    }, [])
 
     let ticketsList = tickets.map(ticket => <Ticket key={ticket.id} ticket={ticket} />)
 

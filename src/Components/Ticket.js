@@ -2,15 +2,14 @@ import { Card, Chip } from '@material-ui/core'
 
 function Ticket ({ticket}) {
 
-    console.log(ticket)
+
     function handleCancel(){
+        console.log(ticket.id)
         fetch(`http://localhost:9393/delete_ticket/${ticket.id}`, {
             method: 'DELETE'
         })
         .then(r=>r.json())
         .then(console.log)
-
-
     }
     return(
     <Card>

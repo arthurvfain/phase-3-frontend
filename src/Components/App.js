@@ -13,7 +13,7 @@ function App() {
   const [flights, setFlights] = useState([])
   const [destinations, setDestinations] = useState([])
   const [passengers, setPassengers] = useState([])
-  const [logIn, setLogIn] = useState({})
+  const [logIn, setLogIn] = useState("")
 
   useEffect(() => {
     fetch('http://localhost:9393/flights').then(r=>r.json()).then(data=>setFlights(data))
